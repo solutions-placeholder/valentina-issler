@@ -282,18 +282,17 @@ html, body {
     overflow-y: auto;
   }
 
-  .navbar {
-    padding: 0.4rem 0;
-    gap: 1rem;
-    font-size: 0.9rem;
+  .page-wrapper {
+    overflow: visible; /* allow scrolling if needed */
   }
 
   .content {
-    position: static;
+    position: static !important;
+    overflow: visible !important;
     flex-direction: column;
     max-width: 90%;
     margin: 2rem auto 5rem auto;
-    padding: 0 1rem;
+    padding: 1rem 1rem 0 1rem; /* added top padding */
     gap: 1.5rem;
   }
 
@@ -302,11 +301,19 @@ html, body {
     width: 100%;
     padding: 0;
     text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .left-side {
+    align-items: center;
   }
 
   .hero-heading {
     font-size: 2.2rem;
+    margin-top: 3.5rem;       /* space below navbar */
     margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
   }
 
   .intro,
