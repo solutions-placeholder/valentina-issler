@@ -1,107 +1,28 @@
 /* ===== Reset and Base ===== */
-html {
+html, body {
   height: 100%;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family:system-ui,'Open Sans';
+  margin: 0; padding: 0;
+  font-family: system-ui, 'Open Sans', sans-serif;
   background-color: #F4F1EC;
   color: #3E4B42;
   line-height: 1.4;
   font-size: 16px;
-  min-height: 100vh;
+  overflow: hidden; /* prevent scroll on body */
   display: flex;
   flex-direction: column;
 }
+
+* {
+  box-sizing: border-box;
+}
+
 /* ===== Page Wrapper ===== */
 .page-wrapper {
   display: flex;
   flex-direction: column;
   flex: 1;
   min-height: 100vh;
-}
-
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1800px;
-  margin: 2rem auto;
-  gap: 10rem;
-  text-align: left;
-  flex: 1; /* allows content to grow and push footer */
-  position: fixed;
-}
-
-.mainCTA {
-background-color: #3E4B42; /* Deep green-grey for contrast */
-  color: #F8F6F1; /* Matches your background for balance */
-  border: none;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-family: 'Inter', sans-serif;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 2rem;
-}
-
-.mainCTA:hover {
-  background-color: #2f3932; /* Slightly darker on hover */
-}
-/* ===== Left and Right Sides ===== */
-.left-side {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;      /* vertical centering */
-  align-items: flex-start;      /* aligns text to the left */
-  padding: 2rem 2rem 2rem 4rem; /* extra left padding only */
-  text-align: left;             /* ensures text stays left-aligned */
-}
-
-.philosophy-block {
-    line-height: 1.7rem;
-}
-
-
-.right-side {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding-top: 30px;
-}
-
-.right-side img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Responsive - stack vertically on smaller screens */
-@media (max-width: 700px) {
-  .content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .left-side,
-  .right-side {
-    flex: none;
-    width: 100%;
-  }
-
-  .right-side {
-    margin-top: 2rem;
-  }
+  overflow: hidden; /* prevent scroll */
 }
 
 /* ===== Navbar ===== */
@@ -110,13 +31,15 @@ background-color: #3E4B42; /* Deep green-grey for contrast */
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #3E4B42; /* match your background */
+  height: 72px; /* fixed height */
+  background-color: #3E4B42;
   z-index: 1000;
   padding: 1rem 0;
   display: flex;
   justify-content: center;
   gap: 2rem;
   border-bottom: 1px solid #ccc;
+  align-items: center;
 }
 
 .navbar a {
@@ -125,6 +48,8 @@ background-color: #3E4B42; /* Deep green-grey for contrast */
   padding-bottom: 6px;
   border-bottom: 2px solid transparent;
   transition: border 0.3s ease;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 .navbar a.active,
@@ -132,42 +57,90 @@ background-color: #3E4B42; /* Deep green-grey for contrast */
   border-bottom: 2px solid #F8F6F1;
 }
 
+/* ===== Content ===== */
+.content {
+  position: fixed;
+  top: 72px;      /* below navbar */
+  bottom: 48px;   /* above footer */
+  left: 0;
+  right: 0;
+  max-width: 1800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 8rem;
+  padding: 2rem 1rem;
+  text-align: left;
+  overflow: hidden;
+}
+
+.left-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* vertically centers content */
+  align-items: flex-start;
+  padding-left: 3rem;
+  text-align: left;
+  min-width: 320px;
+  margin-bottom: 4rem;
+}
+
 .hero-heading {
-  font-size: 90px;
+  font-size: 6rem;
   font-weight: 300;
-  line-height: 6rem;
-  margin-bottom: 3rem;
-  margin-top: 1rem;
+  line-height: 1.1;
+  margin-bottom: 2.8rem;  /* reduce space below heading */
 }
 
 .intro {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+  font-size: 1.3rem;
   max-width: 600px;
+  margin: 0 0 1.1rem 0;   /* remove top margin, keep bottom margin */
 }
 
 .philosophy-block {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   line-height: 1.7rem;
   max-width: 600px;
 }
 
 .mainCTA {
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
   background-color: #3E4B42;
-  color: white;
+  color: #F8F6F1;
   border: none;
-  border-radius: 4px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-family: 'Inter', sans-serif;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  align-self: flex-start;
 }
 
 .mainCTA:hover {
-  background-color: #333;
+  background-color: #2f3932;
 }
 
+.right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0;
+  min-width: 320px;
+}
 
+.right-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
 
 /* ===== Footer ===== */
 .footer {
@@ -175,10 +148,14 @@ background-color: #3E4B42; /* Deep green-grey for contrast */
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 48px;
   background-color: #3E4B42;
   padding: 0.6rem 1rem;
   text-align: center;
   z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .social-icons {
@@ -199,26 +176,146 @@ background-color: #3E4B42; /* Deep green-grey for contrast */
   color: #BDB8B1;
 }
 
-/* ===== Media Queries ===== */
+/* ===== Responsive Breakpoints ===== */
 
-/* Phones */
+/* Large Ultra-Wide Screens (above 1800px) */
+@media (min-width: 1801px) {
+  .content {
+    max-width: 2400px;
+    gap: 12rem;
+    padding: 3rem 2rem;
+  }
+
+  .hero-heading {
+    font-size: 7rem;
+  }
+
+  .intro,
+  .philosophy-block {
+    font-size: 1.4rem;
+  }
+
+  .mainCTA {
+    font-size: 1.2rem;
+    padding: 14px 36px;
+  }
+}
+
+/* Desktops / Large Tablets (900px to 1800px) */
+@media (max-width: 1800px) and (min-width: 901px) {
+  .content {
+    max-width: 1400px;   /* narrower max width */
+    gap: 4rem;           /* less space between left and right sides */
+    padding: 1rem 1.5rem; /* less padding around content */
+  }
+
+  .hero-heading {
+    font-size: 4.5rem;   /* smaller heading */
+  }
+
+  .intro,
+  .philosophy-block {
+    font-size: 1.1rem;   /* slightly smaller text */
+    max-width: 500px;    /* narrower max width for easier reading */
+  }
+
+  .mainCTA {
+    font-size: 0.95rem;
+    padding: 10px 22px;
+  }
+}
+
+/* Tablets (600px to 900px) */
+@media (max-width: 900px) and (min-width: 601px) {
+  .content {
+    position: static; /* allow normal flow on smaller */
+    flex-direction: column;
+    max-width: 90%;
+    margin: 3rem auto 6rem auto;
+    padding: 0 1rem;
+    gap: 3rem;
+  }
+
+  .left-side,
+  .right-side {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .hero-heading {
+    font-size: 3.5rem;
+  }
+
+  .intro,
+  .philosophy-block {
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
+
+  .mainCTA {
+    align-self: center;
+    font-size: 1.1rem;
+    padding: 14px 32px;
+  }
+
+  .right-side img {
+    height: auto;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+}
+
+/* Phones (below 600px) */
 @media (max-width: 600px) {
+  html, body {
+    font-size: 14px;
+    overflow-y: auto; /* allow scrolling on phones */
+  }
+
   .navbar {
+    padding: 0.5rem 0;
     gap: 1.2rem;
     font-size: 0.95rem;
   }
 
   .content {
-    margin: 2.5rem auto;
+    position: static;
+    flex-direction: column;
+    max-width: 90%;
+    margin: 3rem auto 6rem auto;
     padding: 0 1rem;
+    gap: 2rem;
   }
 
-  .content h1 {
-    font-size: 1.6rem;
+  .left-side,
+  .right-side {
+    width: 100%;
+    padding: 0;
+    text-align: center;
   }
 
-  .content p {
+  .hero-heading {
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .intro,
+  .philosophy-block {
     font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .mainCTA {
+    align-self: center;
+    font-size: 1rem;
+    padding: 12px 28px;
+  }
+
+  .right-side img {
+    height: auto;
+    max-width: 100%;
+    border-radius: 6px;
   }
 
   .social-icons {
@@ -227,16 +324,5 @@ background-color: #3E4B42; /* Deep green-grey for contrast */
 
   .social-icons a {
     font-size: 1.3rem;
-  }
-}
-
-/* Tablets */
-@media (max-width: 900px) {
-  .content {
-    padding: 0 1.2rem;
-  }
-
-  .navbar {
-    font-size: 1rem;
   }
 }
