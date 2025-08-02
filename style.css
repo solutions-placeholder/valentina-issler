@@ -5,7 +5,7 @@ html, body {
   font-family: system-ui, 'Open Sans', sans-serif;
   background-color: #F4F1EC;
   color: #3E4B42;
-  line-height: 1.5; /* slightly more airy */
+  line-height: 1.5;
   font-size: 16px;
   overflow: hidden;
   display: flex;
@@ -31,14 +31,14 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 64px; /* slightly less tall */
+  height: 64px;
   background-color: #3E4B42;
   z-index: 1000;
-  padding: 0 1.5rem; /* horizontal padding instead of vertical */
+  padding: 0 1.5rem;
   display: flex;
   justify-content: center;
-  gap: 1.6rem; /* tighter spacing */
-  border-bottom: 1px solid #5a665a; /* slightly darker border for subtlety */
+  gap: 1.6rem;
+  border-bottom: 1px solid #5a665a;
   align-items: center;
   font-weight: 400;
   font-size: 0.95rem;
@@ -47,7 +47,7 @@ html, body {
 .navbar a {
   text-decoration: none;
   color: #F8F6F1;
-  padding-bottom: 4px; /* less padding */
+  padding-bottom: 4px;
   border-bottom: 2px solid transparent;
   transition: border 0.25s ease;
   font-weight: 400;
@@ -58,10 +58,26 @@ html, body {
   border-bottom: 2px solid #F8F6F1;
 }
 
+/* Hide hamburger menu by default */
+.menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  color: #F8F6F1;
+  cursor: pointer;
+}
+
+/* Nav links container default */
+.nav-links {
+  display: flex;
+  gap: 1.6rem;
+  justify-content: center;
+  align-items: center;
+}
+
 /* ===== Content ===== */
 .content {
   position: fixed;
-  top: 64px;      /* match navbar height */
+  top: 64px;
   bottom: 48px;
   left: 0;
   right: 0;
@@ -70,7 +86,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  gap: 5rem; /* reduced gap */
+  gap: 5rem;
   padding: 1.8rem 1rem;
   text-align: left;
   overflow: hidden;
@@ -82,30 +98,30 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-left: 2rem; /* slimmer padding */
+  padding-left: 2rem;
   text-align: left;
   min-width: 320px;
-  margin-bottom: 3rem; /* less margin */
+  margin-bottom: 3rem;
 }
 
 .hero-heading {
-  font-size: 5rem; /* smaller */
+  font-size: 5rem;
   font-weight: 300;
   line-height: 1.05;
-  margin-bottom: 2rem; /* tighter */
-  letter-spacing: -0.03em; /* slight tightening */
+  margin-bottom: 2rem;
+  letter-spacing: -0.03em;
 }
 
 .intro {
-  font-size: 1.15rem; /* slightly smaller */
+  font-size: 1.15rem;
   max-width: 600px;
   margin-bottom: 1rem;
   font-weight: 400;
-  color: #3A453D; /* a bit softer */
+  color: #3A453D;
 }
 
 .philosophy-block {
-  font-size: 1rem; /* slimmer text */
+  font-size: 1rem;
   line-height: 1.5rem;
   max-width: 600px;
   margin-bottom: 1rem;
@@ -116,10 +132,10 @@ html, body {
   background-color: #3E4B42;
   color: #F8F6F1;
   border: none;
-  padding: 10px 26px; /* slimmer padding */
+  padding: 10px 26px;
   font-size: 1rem;
   font-family: 'Inter', sans-serif;
-  border-radius: 4px; /* tighter radius */
+  border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.25s ease;
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.1);
@@ -147,7 +163,7 @@ html, body {
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 8px; /* less round */
+  border-radius: 8px;
   box-shadow: 0 6px 10px rgba(0,0,0,0.07);
 }
 
@@ -175,7 +191,7 @@ html, body {
 }
 
 .social-icons a {
-  font-size: 1.4rem; /* slightly smaller */
+  font-size: 1.4rem;
   color: #F8F6F1;
   text-decoration: none;
   transition: color 0.25s ease;
@@ -191,7 +207,7 @@ html, body {
 @media (min-width: 1801px) {
   .content {
     max-width: 2400px;
-    gap: 8rem; /* less huge gap */
+    gap: 8rem;
     padding: 2rem 1.5rem;
   }
 
@@ -283,7 +299,7 @@ html, body {
   }
 
   .page-wrapper {
-    overflow: visible; /* allow scrolling if needed */
+    overflow: visible;
   }
 
   .content {
@@ -292,7 +308,7 @@ html, body {
     flex-direction: column;
     max-width: 90%;
     margin: 2rem auto 5rem auto;
-    padding: 1rem 1rem 0 1rem; /* added top padding */
+    padding: 1rem 1rem 0 1rem;
     gap: 1.5rem;
   }
 
@@ -310,7 +326,7 @@ html, body {
 
   .hero-heading {
     font-size: 2.2rem;
-    margin-top: 3.5rem;       /* space below navbar */
+    margin-top: 3.5rem;
     margin-bottom: 1rem;
     text-align: center;
     width: 100%;
@@ -340,5 +356,33 @@ html, body {
 
   .social-icons a {
     font-size: 1.2rem;
+  }
+
+  /* Hamburger Menu Styles */
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #3E4B42;
+    width: 100%;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    padding: 0.5rem 1.5rem;
+    border-bottom: 1px solid #5a665a;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.5rem 0;
+    border-bottom: none;
+    text-align: center;
+    font-size: 1rem;
   }
 }

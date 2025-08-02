@@ -11,11 +11,16 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar">
-    <a href="index.html" class="active">Home</a>
-    <a href="">Career Advice</a>
-    <a href="">Music</a>
-    <a href="">Content</a>
-    <a href="">Book</a>
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="#">Career Advice</a>
+      <a href="#">Music</a>
+      <a href="#">Content</a>
+      <a href="#">Book</a>
+    </div>
   </nav>
 
   <!-- Page wrapper -->
@@ -62,5 +67,14 @@
       <a href="mailto:valentinaissler.contact@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const links = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      links.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
