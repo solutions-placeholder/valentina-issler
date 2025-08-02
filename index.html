@@ -5,21 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home – Valentina Issler</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="menu-toggle" id="menu-toggle">
+    <div class="menu-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
       <i class="fas fa-bars"></i>
     </div>
-    <div class="nav-links" id="nav-links">
+    <div class="nav-links">
       <a href="index.html" class="active">Home</a>
-      <a href="#">Career Advice</a>
-      <a href="#">Music</a>
-      <a href="#">Content</a>
-      <a href="#">Book</a>
+      <a href="">Career Advice</a>
+      <a href="">Music</a>
+      <a href="">Content</a>
+      <a href="">Book</a>
     </div>
   </nav>
 
@@ -68,12 +71,23 @@
     </div>
   </footer>
 
+  <!-- JS for burger menu toggle -->
   <script>
-    const toggle = document.getElementById('menu-toggle');
-    const links = document.getElementById('nav-links');
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
 
-    toggle.addEventListener('click', () => {
-      links.classList.toggle('active');
+      toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+
+      // Optional: allow toggle with keyboard "Enter" or "Space" for accessibility
+      toggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          navLinks.classList.toggle('active');
+        }
+      });
     });
   </script>
 </body>
