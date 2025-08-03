@@ -3,40 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Career Advice – Valentina Issler</title>
+  <title>Home – Valentina Issler</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
 </head>
 <body>
   <!-- Navbar -->
-   <nav class="navbar">
-    <a href="about.html">Home</a>
-    <a href="resume.html"class="active >Career Advice</a>
-    <a href="music.html">Music</a>
-    <a href="content.html">Content</a>
-    <a href="ebook.html">Book</a>
+  <nav class="navbar">
+    <div class="nav-left">
+      <div class="nav-left">
+  <a href="index.html" class="site-title">Valentina Issler</a>
+</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="nav-center nav-links">
+      <a href="index.html">Home</a>
+      <a href="resume.html" class="active">Career Advice</a>
+      <a href="#">Music</a>
+      <a href="#">Content</a>
+      <a href="#">Book</a>
+    </div>
+
+    <div class="menu-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
+      <i class="fas fa-bars"></i>
+    </div>
   </nav>
 
-  <!-- Resume Content -->
-  <main class="content">
-    <h1>Valentina Issler</h1>
-    <p>I'm Val. A lawyer, singer, content creator and writer.</p>
-    <p>I live by two philosophies:</p>
-    <p>you can eb many things - why choose only one career</p>
-    <p>Apply... apply... apply - and deal with the consequences later</p>
-    
-  </main>
+  <!-- Page wrapper -->
+  <div class="page-wrapper">
+    <!-- Main content -->
+<!-- Main content -->
+<main class="content resume-layout">
+  <div class="resume-content">
+    <h1>Career Advice</h1>
+    <p>...your resume content here...</p>
+
+    <iframe 
+  width="750" 
+  height="422" 
+  src="https://www.youtube.com/embed/8aNKhVPKHBc?si=25S_-0bP9ye3FZWE" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  referrerpolicy="strict-origin-when-cross-origin" 
+  allowfullscreen
+  style="border-radius: 12px; overflow: hidden;"
+></iframe>
+  </div>
+</main>
+
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/valentinaissler/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/valentina.relssi/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@valentinaissler" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://open.spotify.com/artist/4zfZQI4mZ0fCwmhLHEoyYK" target="_blank"><i class="fab fa-spotify"></i></a>
-      </div>
-    </footer>
-  </div>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/valentinaissler/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/valentina.relssi/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@valentinaissler" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://open.spotify.com/artist/4zfZQI4mZ0fCwmhLHEoyYK" target="_blank"><i class="fab fa-spotify"></i></a>
+      <a href="mailto:valentinaissler.contact@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
   </footer>
+
+  <!-- JS for burger menu toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+
+      // Optional: allow toggle with keyboard "Enter" or "Space" for accessibility
+      toggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          navLinks.classList.toggle('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>

@@ -14,15 +14,24 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar">
+    <div class="nav-left">
+      <div class="nav-left">
+  <a href="index.html" class="site-title">Valentina Issler</a>
+</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="nav-center nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="resume.html">Career Advice</a>
+      <a href="#">Music</a>
+      <a href="#">Content</a>
+      <a href="#">Book</a>
+    </div>
+
     <div class="menu-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
       <i class="fas fa-bars"></i>
-    </div>
-    <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="">Career Advice</a>
-      <a href="">Music</a>
-      <a href="">Content</a>
-      <a href="">Book</a>
     </div>
   </nav>
 
@@ -31,7 +40,7 @@
     <!-- Main content -->
     <main class="content">
       <div class="left-side">
-        <h1 class="hero-heading">Valentina Issler</h1>
+        <h1 class="hero-heading">Oi, Sisslers!</h1>
 
         <p class="intro">
           I’m Val – a lawyer, singer, content creator and writer, who lives by <strong>two philosophies:</strong>
@@ -50,7 +59,7 @@
         </div>
 
         <!-- Call to Action -->
-        <button class="mainCTA">Find out how</button>
+        <button class="mainCTA" onclick="location.href='resume.html'">Find out how</button>
       </div>
 
       <!-- Right image -->
@@ -81,7 +90,7 @@
         navLinks.classList.toggle('active');
       });
 
-      // Optional: allow toggle with keyboard "Enter" or "Space" for accessibility
+      // Accessibility: toggle on keyboard enter/space
       toggle.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();

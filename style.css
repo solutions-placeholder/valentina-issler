@@ -35,13 +35,45 @@ html, body {
   background-color: #3E4B42;
   z-index: 1000;
   padding: 0 1.5rem;
+
   display: flex;
-  justify-content: center;
-  gap: 1.6rem;
-  border-bottom: 1px solid #5a665a;
   align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  border-bottom: 1px solid #5a665a;
   font-weight: 400;
   font-size: 0.95rem;
+}
+
+.nav-left,
+.menu-toggle {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.site-title {
+  color: #F8F6F1;
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Divider between logo and nav links */
+.divider {
+  width: 1px;
+  height: 24px;
+  background-color: #5a665a;
+  align-self: center;
+  margin: 0 12px;
+}
+
+.nav-center {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  flex: 0 0 auto;
+  justify-content: flex-start;
 }
 
 .navbar a {
@@ -58,7 +90,7 @@ html, body {
   border-bottom: 2px solid #F8F6F1;
 }
 
-/* Hide hamburger menu by default */
+/* Hide hamburger menu by default (desktop) */
 .menu-toggle {
   display: none;
   font-size: 1.6rem;
@@ -70,7 +102,7 @@ html, body {
 .nav-links {
   display: flex;
   gap: 1.6rem;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -106,7 +138,7 @@ html, body {
 
 .hero-heading {
   font-size: 5rem;
-  font-weight: 300;
+  font-weight: 200;
   line-height: 1.05;
   margin-bottom: 2rem;
   letter-spacing: -0.03em;
@@ -201,6 +233,8 @@ html, body {
   color: #BDB8B1;
 }
 
+/* Resume-specific layout */
+
 /* ===== Responsive Breakpoints ===== */
 
 /* Large Ultra-Wide Screens (above 1800px) */
@@ -235,7 +269,7 @@ html, body {
   }
 
   .hero-heading {
-    font-size: 3.8rem;
+    font-size: 3.1rem;
   }
 
   .intro,
@@ -358,11 +392,29 @@ html, body {
     font-size: 1.2rem;
   }
 
-  /* Hamburger Menu Styles */
-  .menu-toggle {
-    display: block;
+  /* Mobile Navbar Adjustments */
+  .navbar {
+    justify-content: space-between;
+    padding: 0 1rem;
   }
 
+  .nav-left {
+    order: 1;
+  }
+
+  .nav-center {
+    display: none;
+  }
+
+  .menu-toggle {
+    order: 2;
+    display: flex;
+    font-size: 1.6rem;
+    color: #F8F6F1;
+    cursor: pointer;
+  }
+
+  /* Nav links (hamburger menu) dropdown */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -384,5 +436,10 @@ html, body {
     border-bottom: none;
     text-align: center;
     font-size: 1rem;
+  }
+
+  /* Hide the divider on mobile when burger menu is visible */
+  .divider {
+    display: none;
   }
 }
