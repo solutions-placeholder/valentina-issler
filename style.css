@@ -156,7 +156,7 @@ html, body {
   font-size: 1rem;
   line-height: 1.5rem;
   max-width: 600px;
-  margin-bottom: rem; /* reduced from 1rem */
+  margin-bottom: rem;
   color: #3A453D;
 }
 
@@ -234,7 +234,6 @@ html, body {
 }
 
 /* Resume-specific layout */
-
 .resume-content {
   max-width: 800px;
   margin: 0 auto;
@@ -253,6 +252,53 @@ html, body {
 .resume-content ul {
   padding-left: 1.2rem;
   margin-bottom: 1.5rem;
+}
+
+/* music.css – page-specific styles */
+.music-page {
+  width: 100%;
+}
+
+.music-icons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: start;
+  align-items: center;
+}
+
+.music-icons a {
+  font-size: 1.8rem;
+  color: #3E4B42;
+  transition: color 0.3s ease, transform 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.music-icons a:hover,
+.music-icons a:focus {
+  color: #6C7A68;
+  transform: scale(1.2);
+  outline: none;
+}
+
+/* Deezer wrapper ensures no strange line or fallback text */
+.music-icons .deezer-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.music-icons .deezer-icon {
+  height: 1.8rem;
+  width: auto;
+  display: block;
+  vertical-align: middle;
+  filter: invert(28%) sepia(7%) saturate(665%) hue-rotate(86deg) brightness(92%) contrast(86%);
+  pointer-events: none;
 }
 
 /* ===== Responsive Breakpoints ===== */
@@ -434,7 +480,6 @@ html, body {
     cursor: pointer;
   }
 
-  /* Nav links (hamburger menu) dropdown */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -458,7 +503,6 @@ html, body {
     font-size: 1rem;
   }
 
-  /* Hide the divider on mobile when burger menu is visible */
   .divider {
     display: none;
   }
