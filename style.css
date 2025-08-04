@@ -16,6 +16,12 @@ html, body {
   box-sizing: border-box;
 }
 
+@media (min-width: 1801px) {
+  .right-side img {
+    object-position: center top; /* Move focus up so head is visible */
+  }
+}
+
 /* ===== Page Wrapper ===== */
 .page-wrapper {
   display: flex;
