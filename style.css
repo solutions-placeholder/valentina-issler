@@ -490,21 +490,30 @@ html, body {
     cursor: pointer;
   }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #3E4B42;
-    width: 100%;
-    position: absolute;
-    top: 64px;
-    left: 0;
-    padding: 0.5rem 1.5rem;
-    border-bottom: 1px solid #5a665a;
-  }
+.nav-links {
+  display: flex;          /* keep flex all the time */
+  flex-direction: column;
+  background-color: #3E4B42;
+  width: 100%;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  padding: 0.5rem 1.5rem;
+  border-bottom: 1px solid #5a665a;
 
-  .nav-links.active {
-    display: flex;
-  }
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  transition: max-height 0.4s ease, opacity 0.8s ease;
+}
+
+.nav-links.active {
+  max-height: 500px;  /* adjust if needed */
+  opacity: 1;
+  pointer-events: auto;
+}
 
   .nav-links a {
     padding: 0.5rem 0;
