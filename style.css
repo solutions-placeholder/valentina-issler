@@ -293,6 +293,31 @@ html, body {
   outline: none;
 }
 
+
+.see-me-perform {
+  width: 100%;
+  text-align: center;
+  margin: 2rem 0 4rem 0; /* spacing above footer */
+}
+
+.perform-button {
+  background-color: #3E4B42;
+  color: #F8F6F1;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.perform-button:hover {
+  background-color: #2f3932;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
 /* Deezer wrapper ensures no strange line or fallback text */
 .music-icons .deezer-wrapper {
   display: inline-flex;
