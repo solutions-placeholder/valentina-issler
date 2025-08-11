@@ -1,0 +1,102 @@
+<!-- music.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Books | Valentina Issler</title>
+  <link rel="stylesheet" href="/style/style.css" />
+  <link rel="stylesheet" href="music.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <style>
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="index.html" class="site-title">V.I.</a>
+    </div>
+    <div class="divider"></div>
+    <div class="nav-center nav-links">
+     <a href="../index/">Home</a>
+      <a href="../resume/">Career Advice</a>
+      <a href="../music/">Music</a>
+      <a href="../books/" class="active">Books</a>
+    </div>
+    <div class="menu-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- Page wrapper -->
+  <div class="page-wrapper">
+    <!-- Main content -->
+    <main class="content music-content">
+      <div class="music-page">
+        <h1>Books</h1> 
+        <p>Placeholder Text</p>
+
+
+  <!-- Inside .music-icons -->
+<div class="music-icons">
+  <a href="https://music.apple.com/br/artist/valentina-issler/1754383011" target="_blank" aria-label="Apple Music" rel="noopener noreferrer">
+    <i class="fab fa-apple"></i>
+  </a>
+  <a href="https://music.amazon.com/artists/B0D87TR18R/valentina-issler" target="_blank" aria-label="Amazon Music" rel="noopener noreferrer">
+    <i class="fab fa-amazon"></i>
+  </a>
+  <a href="https://soundcloud.com/valentina-issler" target="_blank" aria-label="SoundCloud" rel="noopener noreferrer">
+    <i class="fab fa-soundcloud"></i>
+  </a>
+ <a href="https://www.deezer.com/us/artist/271420532" target="_blank" aria-label="Deezer">
+        <i class="fas fa-music"></i>
+      </a>
+  <a href="https://tidal.com/browse/artist/48741901" target="_blank" aria-label="Tidal" rel="noopener noreferrer">
+    <i class="fas fa-water"></i>
+  </a>
+  <a href="https://www.youtube.com/@valentinaissler" target="_blank" aria-label="YouTube" rel="noopener noreferrer">
+    <i class="fab fa-youtube"></i>
+  </a>
+</div>
+      </div>
+
+      
+
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/valentinaissler/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/valentina.relssi/?hl=en" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@valentinaissler" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://open.spotify.com/artist/4zfZQI4mZ0fCwmhLHEoyYK" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+        <a href="mailto:valentinaissler.contact@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JS for burger menu toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+
+      toggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          navLinks.classList.toggle('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
