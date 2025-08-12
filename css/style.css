@@ -287,6 +287,9 @@ html, body {
   }
 }
 
+
+
+
 /* Phones: full width buttons for easy tap */
 @media (max-width: 600px) {
   .pdf-button {
