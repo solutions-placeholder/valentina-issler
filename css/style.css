@@ -133,7 +133,15 @@ html, body {
   margin-top: 2rem;
   margin-bottom: 2rem;
   color: #D9CFC1;
+      margin: 1.5em 0 0.5em;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-align: center;
+      user-select: none;
+      transition: color 0.3s ease;
+      font-family: system-ui, 'Open Sans', sans-serif;
 }
+
 
 .example-hint,
 .example-hint:link,
