@@ -260,6 +260,11 @@ html, body {
   margin-bottom: 1.5rem;
 }
 
+.resume-content ul li {
+  margin-bottom: 1em; /* increase space between bullets */
+  line-height: 1.6;   /* improve readability */
+}
+
 /* music.css – page-specific styles */
 .music-page {
   width: 100%;
