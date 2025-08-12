@@ -516,11 +516,17 @@ html, body {
     position: static !important;
     overflow: visible !important;
     flex-direction: column;
-    max-width: 90%;
+    max-width: 100%;
     margin: 2rem auto 5rem auto;
     padding: 1rem 1rem 0 1rem;
     gap: 1.5rem;
     margin-top: 80px; /* Clears fixed navbar */
+  }
+
+    .right-side img {
+    transform: scale(1.05); /* scales the image to 80% size */
+    transform-origin: center center; /* scale from center */
+    transition: transform 0.3s ease; /* smooth scaling */
   }
 
   .left-side,
@@ -571,6 +577,7 @@ html, body {
   .social-icons a {
     font-size: 1.2rem;
   }
+  
 
   /* Mobile Navbar Adjustments */
   .navbar {
