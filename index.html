@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home | Valentina Issler</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Absolute path from root -->
+  <link rel="stylesheet" href="/css/style.css" />
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,13 +16,13 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-left">
-      <a href="./" class="site-title">Test</a>
+      <a href="/" class="site-title">V.I.</a>
     </div>
 
     <div class="divider"></div>
 
     <div class="nav-center nav-links">
-      <a href="./" class="active">Home</a>
+      <a href="/" class="active">Home</a>
       <a href="/resume/">Career Advice</a>
       <a href="/music/">Music</a>
       <a href="/books/">Books</a>
@@ -38,13 +39,11 @@
     <main class="content">
       <div class="left-side">
         <h1 class="hero-heading">VALENTINA ISSLER</h1>
-        <p class="intro">
-          Lawyer. Singer. Content Creator and Writer
-        </p>
+        <p class="intro">Lawyer. Singer. Content Creator and Writer</p>
         <!-- Call to Action -->
-        <button class="mainCTA" onclick="location.href='../resume/'">Career Advice</button>
-        <button class="mainCTA" onclick="location.href='../music/'">My Music</button>
-        <button class="mainCTA" onclick="location.href='../books'">My Books</button>
+        <button class="mainCTA" onclick="location.href='/resume/'">Career Advice</button>
+        <button class="mainCTA" onclick="location.href='/music/'">My Music</button>
+        <button class="mainCTA" onclick="location.href='/books/'">My Books</button>
       </div>
 
       <!-- Right image -->
@@ -57,10 +56,10 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="social-icons">
-      <a href="https://www.linkedin.com/in/valentinaissler/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.instagram.com/valentina.relssi/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@valentinaissler" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://open.spotify.com/artist/4zfZQI4mZ0fCwmhLHEoyYK" target="_blank"><i class="fab fa-spotify"></i></a>
+      <a href="https://www.linkedin.com/in/valentinaissler/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/valentina.relssi/?hl=en" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@valentinaissler" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+      <a href="https://open.spotify.com/artist/4zfZQI4mZ0fCwmhLHEoyYK" target="_blank" rel="noopener"><i class="fab fa-spotify"></i></a>
       <a href="mailto:valentinaissler.contact@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
   </footer>
@@ -75,7 +74,6 @@
         navLinks.classList.toggle('active');
       });
 
-      // Accessibility: toggle on keyboard enter/space
       toggle.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
