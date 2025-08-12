@@ -10,6 +10,25 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   />
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <style>
+    /* Inline styles for the hint */
+    .example-hint {
+      margin: 1.5em 0 0.5em;
+      font-size: 0.95rem;
+      color: #666666;
+      cursor: pointer;
+      text-align: center;
+      user-select: none;
+      transition: color 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    .example-hint:hover,
+    .example-hint:focus {
+      color: #007acc; /* subtle brand/accent blue */
+      outline: none;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -45,8 +64,21 @@
           <li><strong>Apply, apply, apply</strong> — If you don't apply to that job or that university, you have zero chances of getting in. Apply first, think about finances, responsibilities, life later. There is no point in anticipating problems that you do not yet have.</li>
           <li><strong>Be yourself</strong> — If you pretend to be someone else in the interview, you’ll have to keep pretending every day at work. But if you're real from the start, and they hire you, you’ll know they value you — not a version you made up.</li>
           <li><strong>Rejection is redirection</strong> — If it wasn’t a match, there’s a reason. Whether you were overqualified, under-excited, or not aligned with the culture — better to walk away than be stuck somewhere you don’t belong.</li>
-        </ul>
+        </ul><br>
+             <!-- New Content -->
 
+        <!-- Hint clickable text -->
+        <div
+          class="example-hint"
+          tabindex="0"
+          role="button"
+          aria-label="Click to scroll to example resumes"
+          onclick="document.getElementById('example-statements').scrollIntoView({ behavior: 'smooth' })"
+          onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); document.getElementById('example-statements').scrollIntoView({ behavior: 'smooth' }) }"
+        >
+          Click for example resumes ↓
+        </div>
+        
         <h2>Why am I giving this advice?</h2>
         <p>Many intelligent, bright people don’t land opportunities due to a misunderstanding of what a personal statement is. I’ve lived in Brazil, Spain, the UK, and Belgium — and I’ve seen how different the education and hiring processes are. For instance, Brazil focuses heavily on grades; in the UK, once you hit the grade threshold, your personal statement becomes the differentiator.</p>
 
@@ -63,7 +95,22 @@
           <li>A job at a startup (Sweatcoin) straight out of university</li>
           <li>A training contract (and lawyer role) at a top 5 UK law firm</li>
           <li>A network of brilliant people I’ve helped, who now help others</li>
-        </ul>
+        </ul><br>
+
+        <div
+          class="example-hint"
+          tabindex="0"
+          role="button"
+          aria-label="Click to scroll to example resumes"
+          onclick="document.getElementById('example-statements').scrollIntoView({ behavior: 'smooth' })"
+          onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); document.getElementById('example-statements').scrollIntoView({ behavior: 'smooth' }) }"
+        >
+          Click for example resumes ↓
+        </div>
+
+
+
+
 
         <h2>What makes a good application?</h2>
         <p>This advice is based on my own experience applying in the UK and US. I can’t speak for other systems — but here, one thing is universal: <strong>your personal statement needs to be personal</strong>.</p>
@@ -74,30 +121,26 @@
           <li><strong>Why this company/university?</strong> Why are you a good cultural fit? How will you maximise facilities, faculty, networking, etc. These can’t be generic answers — it’s about you specifically.</li>
           <li><strong>Why you?</strong> What is your background and how has it shaped the way you think, work in a team, or lead? There’s a difference between saying “I’m a good team player” and “I’m a good team player because in X moment in my life I faced Y adversity which made me Z.”</li>
         </ul>
-            <!-- New Content -->
-        <h2>Example statements</h2>
+
+        <h2 id="example-statements">Example statements</h2>
         <p>Here are a few real, anonymised personal statements — from law, business, tech, to the arts and sciences. Every company and university has a plagiarism software so please don’t copy them, it will immediately reject your application, but use them to inspire and understand just how personal, specific, and human they are.</p>
 
-               <div class="pdf-row">
-  <a href="pdfs/file1.pdf" target="_blank" class="pdf-button">Law - Top Firm</a>
-  <a href="pdfs/file3.pdf" target="_blank" class="pdf-button">Law - Scholarship</a>
-  <a href="pdfs/file2.pdf" target="_blank" class="pdf-button">Design</a>
-  <a href="pdfs/file4.pdf" target="_blank" class="pdf-button">Arts & Science</a>
-  <a href="pdfs/file5.pdf" target="_blank" class="pdf-button">Int. Relations</a>
-</div>
+        <div class="pdf-row">
+          <a href="pdfs/file1.pdf" target="_blank" class="pdf-button">Law - Top Firm</a>
+          <a href="pdfs/file3.pdf" target="_blank" class="pdf-button">Law - Scholarship</a>
+          <a href="pdfs/file2.pdf" target="_blank" class="pdf-button">Design</a>
+          <a href="pdfs/file4.pdf" target="_blank" class="pdf-button">Arts & Science</a>
+          <a href="pdfs/file5.pdf" target="_blank" class="pdf-button">Int. Relations</a>
+        </div>
 
         <h2>Questions to ask yourself before writing</h2>
         <p>I created this form to help you get your ideas flowing. You’re welcome to just use it as a guide — or submit it if you’d like my input. If you opt in for help, I’ll choose who to personally support based on the answers, as I can’t help everyone (I really wish I could!).</p>
         <button class="mainCTA" onclick="location.href='https://tally.so/embed/wdy91o?alignLeft=1&transparentBackground=1&dynamicHeight=1'">Get My Help</button>
         <!-- End New Content -->
 
-  
-
       </div><br><br>
     </main>
   </div>
-
-
 
   <!-- Footer -->
   <footer class="footer">

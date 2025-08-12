@@ -129,6 +129,10 @@ html, body {
   overflow: hidden;
 }
 
+.example-hint {
+  margin-top: 1rem;
+}
+
 .left-side {
   flex: 1;
   display: flex;
