@@ -132,6 +132,19 @@ html, body {
 .example-hint {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  color: #D9CFC1;
+}
+
+.example-hint,
+.example-hint:link,
+.example-hint:visited {
+  color: #D9CFC1;
+  text-decoration: none; /* removes underline */
+}
+.example-hint:hover,
+.example-hint:focus {
+  color: #D9CFC1; /* or your hover color */
+  text-decoration: underline;
 }
 
 .left-side {
