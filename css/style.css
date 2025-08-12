@@ -246,6 +246,7 @@ html, body {
   padding: 2rem;
   overflow-y: auto;
   line-height: 1.6;
+  padding: 0rem 2rem 2rem 2rem; /* less top padding, keep others */
 }
 
 .resume-content h1,
@@ -443,7 +444,7 @@ html, body {
     overflow: visible;
   }
 
-  .content {
+ .content {
     position: static !important;
     overflow: visible !important;
     flex-direction: column;
@@ -451,8 +452,7 @@ html, body {
     margin: 2rem auto 5rem auto;
     padding: 1rem 1rem 0 1rem;
     gap: 1.5rem;
-
-    margin-top: 80px; /* Added margin top to clear fixed navbar */
+    margin-top: 80px; /* Clears fixed navbar */
   }
 
   .left-side,
@@ -469,7 +469,7 @@ html, body {
 
   .hero-heading {
     font-size: 2.2rem;
-    margin-top: 0.4rem;
+    margin: 0.4rem 0 1rem 0;
     margin-bottom: 1rem;
     text-align: center;
     width: 100%;
