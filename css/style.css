@@ -441,6 +441,32 @@ html, body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
+.music-page-body html,
+.music-page-body body {
+  overflow-y: auto !important;
+}
+
+.music-page-body .page-wrapper {
+  overflow: visible !important;
+}
+
+.music-page-body .content {
+  position: relative !important;
+  top: 64px; /* height of navbar */
+  bottom: 48px; /* height of footer */
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 5rem;
+  padding: 1.8rem 1rem;
+  text-align: left;
+  overflow-y: auto !important;
+  max-height: calc(100vh - 64px - 48px);
+}
+
 /* Deezer wrapper ensures no strange line or fallback text */
 .music-icons .deezer-wrapper {
   display: inline-flex;
@@ -567,7 +593,7 @@ html, body {
     flex-direction: column;
     max-width: 100%;
     margin: 80px auto 5rem auto; /* top margin clears fixed navbar */
-    padding: 1rem 1rem 0;
+    padding: 0rem 1rem 0;
     gap: 1.5rem;
   }
 
@@ -612,6 +638,10 @@ html, body {
     font-size: 0.95rem;
     padding: 10px 24px;
     width: 100%;
+  }
+
+  .music-page-body {
+    margin-top: 20rem;
   }
 
   .social-icons {
