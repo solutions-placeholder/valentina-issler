@@ -207,24 +207,71 @@ html, body {
 
 /* === PDFs === */
 
+/* PDF Buttons Container */
 .pdf-row {
   display: flex;
   gap: 10px;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+  flex-wrap: wrap; /* allow buttons to wrap on small screens */
+  justify-content: flex-start;
 }
 
+/* PDF Buttons Base Style */
 .pdf-button {
-  padding: 10px 15px;
+  padding: 10px 20px;
   background-color: #3E4B42; /* dark green */
   color: white;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.2s;
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+  display: inline-block;
+  min-width: 100px;
+  text-align: center;
+  box-sizing: border-box;
+  user-select: none;
 }
 
-.pdf-button:hover {
+/* Hover state */
+.pdf-button:hover,
+.pdf-button:focus {
   background-color: #5A6B60; /* lighter green on hover */
+  outline: none;
+}
+
+/* Responsive adjustments */
+
+/* Tablets and below: stack buttons if needed */
+@media (max-width: 900px) {
+  .pdf-button {
+    flex: 1 1 45%; /* buttons take about half container width */
+    min-width: auto;
+    white-space: normal;
+    font-size: 0.95rem;
+    padding: 12px 15px;
+  }
+
+  .pdf-row {
+    justify-content: center; /* center buttons on smaller screens */
+  }
+}
+
+/* Phones: full width buttons for easy tap */
+@media (max-width: 600px) {
+  .pdf-button {
+    flex: 1 1 100%;
+    min-width: auto;
+    font-size: 0.9rem;
+    padding: 14px 20px;
+    white-space: normal;
+  }
+
+  .pdf-row {
+    justify-content: center;
+  }
 }
 
 /* ===== Footer ===== */
