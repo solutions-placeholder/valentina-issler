@@ -510,6 +510,7 @@ html, body {
   }
 }
 
+
 /* Desktops / Large Tablets (900px to 1800px) */
 @media (max-width: 1800px) and (min-width: 901px) {
   .content {
