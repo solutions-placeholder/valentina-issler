@@ -38,16 +38,24 @@
 
     <div class="divider"></div>
 
-    <div class="nav-center nav-links">
+    <div class="nav-center nav-links" id="mobile-nav">
       <a href="/" class="active">Home</a>
       <a href="/resume/">Career Advice</a>
       <a href="/music/">Music</a>
       <!-- <a href="/books/">Books</a> -->
     </div>
 
-    <div class="menu-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
-      <i class="fas fa-bars"></i>
-    </div>
+    <!-- Burger button: same class name so existing layout rules apply; spans enable animation -->
+    <button
+      class="menu-toggle hamburger"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      type="button"
+      tabindex="0"
+    >
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- Page wrapper -->
@@ -70,20 +78,20 @@
     </main>
   </div>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="social-icons">
-    <a href="https://www.linkedin.com/in/valentinaissler/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-    <a href="https://www.instagram.com/valentina.relssi/?hl=en" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.tiktok.com/@valentinaissler" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
-    <a href="https://open.spotify.com/artist/4zfZQI4mZ0fCwmhLHEoyYK" target="_blank" rel="noopener"><i class="fab fa-spotify"></i></a>
-    <a href="mailto:valentinaissler.contact@gmail.com"><i class="fas fa-envelope"></i></a>
-  </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/valentinaissler/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/valentina.relssi/?hl=en" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@valentinaissler" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+      <a href="https://open.spotify.com/artist/4zfZQI4mZ0fCwmhLHEoyYK" target="_blank" rel="noopener"><i class="fab fa-spotify"></i></a>
+      <a href="mailto:valentinaissler.contact@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
 
-  <div class="privacy-link">
-    <a href="#">Privacy Policy</a>
-  </div>
-</footer>
+    <div class="privacy-link">
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
 
   <!-- Mailing list modal (kept, but never opened on Home) -->
   <div id="ml-modal" class="ml-modal" aria-hidden="true">
@@ -118,24 +126,22 @@
     </div>
   </div>
 
-  <!-- JS for burger menu only (NO modal auto-open on Home) -->
+  <!-- JS (minimal changes: toggles .active on same .menu-toggle + nav-links) -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // ======= Burger menu =======
       const toggle = document.querySelector('.menu-toggle');
       const navLinks = document.querySelector('.nav-links');
-      const icon = toggle.querySelector('i');
+
+      function setExpanded(isOpen) {
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      }
 
       const toggleMenu = () => {
-        navLinks.classList.toggle('active');
-        toggle.classList.toggle('active');
-        if (toggle.classList.contains('active')) {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-times');
-        } else {
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        }
+        const isOpen = !toggle.classList.contains('active');
+        toggle.classList.toggle('active', isOpen);   // animates the bars
+        navLinks.classList.toggle('active', isOpen);  // shows/hides your mobile links
+        setExpanded(isOpen);
       };
 
       toggle.addEventListener('click', toggleMenu);
@@ -146,7 +152,14 @@
         }
       });
 
-      // NOTE: Intentionally no openMLModal() call on the homepage.
+      // Optional: close menu when a link is clicked (mobile UX)
+      navLinks?.addEventListener('click', (e) => {
+        if (e.target.matches('a') && toggle.classList.contains('active')) {
+          toggle.classList.remove('active');
+          navLinks.classList.remove('active');
+          setExpanded(false);
+        }
+      });
     });
   </script>
 </body>

@@ -31,24 +31,32 @@
 </head>
 <body>
   <!-- Navbar -->
-<nav class="navbar">
-  <div class="nav-left">
-    <a href="/" class="site-title">V.I.</a>
-  </div>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="/" class="site-title">V.I.</a>
+    </div>
 
-  <div class="divider"></div>
+    <div class="divider"></div>
 
-  <div class="nav-center nav-links">
-    <a href="/">Home</a>
-    <a href="/resume/">Career Advice</a>
-    <a href="/music/" class="active">Music</a>
-  <!--  <a href="/books/">Books</a> -->
-  </div>
+    <div class="nav-center nav-links" id="mobile-nav">
+      <a href="/">Home</a>
+      <a href="/resume/">Career Advice</a>
+      <a href="/music/" class="active">Music</a>
+      <!-- <a href="/books/">Books</a> -->
+    </div>
 
-  <div class="menu-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
-    <i class="fas fa-bars"></i>
-  </div>
-</nav>
+    <!-- Animated burger (small) -->
+    <button
+      class="menu-toggle hamburger"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      type="button"
+      tabindex="0"
+    >
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
   <!-- Page wrapper -->
   <div class="page-wrapper">
@@ -61,7 +69,7 @@
 
         <p>As a teenager, I’d fill hard drives with cover songs. It was my hobby after school, to record covers I might one day post (but never did) – I was too embarrassed and scared of judgement. I participated on a couple talent shows in school, but my voice would always crack from fear.</p><br>
 
-                <iframe
+        <iframe
           data-testid="embed-iframe"
           style="border-radius:12px"
           src="https://open.spotify.com/embed/artist/4zfZQI4mZ0fCwmhLHEoyYK?utm_source=generator&theme=0"
@@ -73,7 +81,7 @@
           loading="lazy"
         ></iframe>
 
-                <!-- Music platform icons -->
+        <!-- Music platform icons -->
         <div class="music-icons" style="margin-top: -1rem; margin-bottom: 3rem;">
           <a href="https://music.apple.com/br/artist/valentina-issler/1754383011" target="_blank" aria-label="Apple Music" rel="noopener noreferrer">
             <i class="fab fa-apple"></i>
@@ -94,7 +102,6 @@
             <i class="fab fa-youtube"></i>
           </a>
         </div>
-        
 
         <p>At 18, I moved to London for university and started performing at student showcases. It was insanely scary, but the feedback made me keep going. I branched out and started gigging in pubs in London!</p>
 
@@ -107,8 +114,8 @@
         <p>That same year, my cousin asked me to perform at his wedding, where I sang in front of 400 people — my biggest audience to date — and it was one of the most surreal, emotional, affirming moments of my life. And then something even more unexpected happened: through music, I met a Grammy-nominated producer in LA, and we started working on an album together.</p>
 
         <p>I’ve always dreamed of being a singer, but I also fell in love with law. Why choose only one career? Boxing people is such common practice that we forget to think outside the box.</p>
-        
-      </div><br><br>
+      </div>
+      <br><br>
     </main>
   </div>
 
@@ -119,39 +126,43 @@
       <a href="https://www.instagram.com/valentina.relssi/?hl=en" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       <a href="https://www.tiktok.com/@valentinaissler" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
       <a href="https://open.spotify.com/artist/4zfZQI4mZ0fCwmhLHEoyYK" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-      <a href="mailto:valentinaissler.contact@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="mailto:valentinaissler.contact@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
     </div>
   </footer>
 
-  <!-- JS for burger menu toggle -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const icon = toggle.querySelector('i');
+  <!-- JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Burger menu (animated spans), does not affect <a>.active
+      const toggle = document.querySelector('.menu-toggle'); // button.hamburger
+      const navLinks = document.querySelector('.nav-links');
 
-    const toggleMenu = () => {
-      navLinks.classList.toggle('active');
-      toggle.classList.toggle('active');
-
-      if (toggle.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-      } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+      function setExpanded(isOpen) {
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
       }
-    };
 
-    toggle.addEventListener('click', toggleMenu);
+      const toggleMenu = () => {
+        const isOpen = !toggle.classList.contains('active');
+        toggle.classList.toggle('active', isOpen);   // animates bars
+        navLinks.classList.toggle('active', isOpen); // shows/hides mobile menu
+        setExpanded(isOpen);
+      };
 
-    toggle.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleMenu();
-      }
+      toggle.addEventListener('click', toggleMenu);
+      toggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
+      });
+
+      // Close on link click (mobile), without touching the active link class
+      navLinks.addEventListener('click', (e) => {
+        if (e.target.matches('a') && toggle.classList.contains('active')) {
+          toggle.classList.remove('active');
+          navLinks.classList.remove('active');
+          setExpanded(false);
+        }
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>

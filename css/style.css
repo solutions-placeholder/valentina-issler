@@ -608,3 +608,49 @@ html, body {
   color: #afb6b1;   /* brighten on hover */
   text-decoration: none;
 }
+/* ===== Scoped Hamburger Animation (appended; safe) ===== */
+@media (max-width: 600px) {
+  /* Keep using your existing .menu-toggle for layout, add .hamburger for animation */
+  .menu-toggle.hamburger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;          /* reduced from 28px */
+    height: 19px;         /* reduced from 22px */
+    position: relative;
+    border: 0;
+    background: transparent;
+    padding: 0;
+  }
+  .menu-toggle.hamburger span {
+    position: absolute;
+    left: 0; right: 0;
+    height: 2px;
+    background: #F8F6F1;  /* same as navbar text */
+    border-radius: 2px;
+    transform-origin: center;
+    transition: transform .28s ease, opacity .2s ease;
+    /* Width is full by default, so no size change to layout */
+  }
+  .menu-toggle.hamburger span:nth-child(1) { top: 0; }
+  .menu-toggle.hamburger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+  .menu-toggle.hamburger span:nth-child(3) { bottom: 0; }
+
+  /* Active state: top/bottom rotate into an X, middle fades out */
+  .menu-toggle.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);   /* was 10px */
+  }
+  .menu-toggle.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateY(-50%) scaleX(0.2);
+  }
+  .menu-toggle.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg); /* was -10px */
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .menu-toggle.hamburger span { transition: none !important; }
+  }
+}
+}
