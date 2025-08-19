@@ -422,3 +422,113 @@ html, body {
   .site-title { font-size: 1.26rem; margin-top: 0.3rem; }
   .menu-toggle { font-size: 1.72rem; margin-top: -0.2rem; }
 }
+
+/* ===== Mailing List Modal ===== */
+.ml-modal {
+  position: fixed;
+  inset: 0;
+  display: none;              /* hidden by default */
+  z-index: 2000;              /* above navbar */
+}
+.ml-modal.open { display: block; }
+
+.ml-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: saturate(120%) blur(2px);
+}
+
+.ml-dialog {
+  position: relative;
+  max-width: 560px;
+  width: calc(100% - 2rem);
+  margin: 16vh auto 0;   /* ⬅️ was 8vh, now 16vh */
+  background: #F8F6F1;
+  color: #3E4B42;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  padding: 1.25rem 1.25rem 1.1rem;
+  outline: none;
+}
+
+.ml-title {
+  margin: 0 0 .35rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.ml-subtext {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.ml-cta {
+  display: inline-block;
+  background-color: #3E4B42;
+  color: #F8F6F1;
+  text-decoration: none;
+  border: none;
+  padding: .7rem 1.1rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  transition: transform .05s ease, box-shadow .2s ease, background-color .2s ease;
+}
+.ml-cta:active { transform: translateY(1px); }
+.ml-cta:hover, .ml-cta:focus { background-color: #2f3932; box-shadow: 0 4px 12px rgba(0,0,0,0.18); }
+
+.ml-fineprint {
+  margin: .7rem 0 0;
+  font-size: .85rem;
+  color: #576158;
+}
+
+.ml-close {
+  position: absolute;
+  top: 10px; right: 10px;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 1px solid #d7d2cb;
+  background: #fff;
+  color: #3E4B42;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s ease;
+}
+.ml-close:hover { background: #f3efe9; }
+
+/* Lock page scroll while modal open (optional) */
+.ml-lock {
+  overflow: hidden !important;
+}
+
+/* Mobile-first adjustments */
+@media (max-width: 600px) {
+  .ml-dialog {
+    margin: 20vh auto 0;   /* ⬅️ was 10vh, now lower on phones */
+    width: calc(100% - 1.5rem);
+    padding: 1rem 1rem .95rem;
+    border-radius: 12px;
+  }
+  .ml-title { font-size: 1.2rem; }
+  .ml-subtext { font-size: 0.95rem; }
+  .ml-cta { width: 100%; text-align: center; }
+}
+/* Very large screens */
+@media (min-width: 1801px) {
+  .ml-dialog {
+    max-width: 640px;
+    padding: 1.5rem 1.5rem 1.2rem;
+  }
+  .ml-title { font-size: 1.6rem; }
+  .ml-subtext { font-size: 1.05rem; }
+}

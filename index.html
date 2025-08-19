@@ -15,25 +15,24 @@
 </head>
 <body>
   <!-- Navbar -->
-<!-- Navbar -->
-<nav class="navbar">
-  <div class="nav-left">
-    <a href="/" class="site-title">V.I.</a>
-  </div>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="/" class="site-title">V.I.</a>
+    </div>
 
-  <div class="divider"></div>
+    <div class="divider"></div>
 
-  <div class="nav-center nav-links">
-    <a href="/" class="active">Home</a>
-    <a href="/resume/">Career Advice</a>
-    <a href="/music/">Music</a>
-    <!-- <a href="/books/">Books</a> -->
-  </div>
+    <div class="nav-center nav-links">
+      <a href="/" class="active">Home</a>
+      <a href="/resume/">Career Advice</a>
+      <a href="/music/">Music</a>
+      <!-- <a href="/books/">Books</a> -->
+    </div>
 
-  <div class="menu-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
-    <i class="fas fa-bars"></i>
-  </div>
-</nav>
+    <div class="menu-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
 
   <!-- Page wrapper -->
   <div class="page-wrapper">
@@ -66,36 +65,108 @@
     </div>
   </footer>
 
-  <!-- JS for burger menu toggle -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const icon = toggle.querySelector('i');
+  <!-- Mailing list modal -->
+  <div id="ml-modal" class="ml-modal" aria-hidden="true">
+    <div class="ml-backdrop" data-close="ml"></div>
+    <div
+      class="ml-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="ml-title"
+      aria-describedby="ml-subtext"
+      tabindex="-1"
+    >
+      <button class="ml-close" aria-label="Close dialog" data-close="ml">
+        <span aria-hidden="true">&times;</span>
+      </button>
 
-    const toggleMenu = () => {
-      navLinks.classList.toggle('active');
-      toggle.classList.toggle('active');
+      <h2 id="ml-title" class="ml-title">Subscribe to receive updates</h2>
+      <p id="ml-subtext" class="ml-subtext">
+        Get occasional emails on <strong>career advice</strong>, <strong>personal development</strong>, and early
+        access to <strong>new music</strong> and performances. No spam — unsubscribe anytime.
+      </p>
 
-      // Swap icon
-      if (toggle.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-      } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+      <a
+        class="ml-cta"
+        href="mailto:valentinaissler.contact@gmail.com?subject=Subscribe%20me%20to%20the%20mailing%20list"
+        rel="noopener"
+      >
+        Join Mailing List
+      </a>
+
+      <p class="ml-fineprint">By joining, you agree to receive occasional updates from Valentina.</p>
+    </div>
+  </div>
+
+  <!-- JS for burger menu toggle + modal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // ======= Burger menu =======
+      const toggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      const icon = toggle.querySelector('i');
+
+      const toggleMenu = () => {
+        navLinks.classList.toggle('active');
+        toggle.classList.toggle('active');
+        if (toggle.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      };
+
+      toggle.addEventListener('click', toggleMenu);
+      toggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleMenu();
+        }
+      });
+
+      // ======= Mailing list modal =======
+      const modal = document.getElementById('ml-modal');
+      const dialog = modal.querySelector('.ml-dialog');
+
+      function openMLModal() {
+        modal.setAttribute('aria-hidden', 'false');
+        modal.classList.add('open');
+        // Optional: prevent background scroll while modal open
+        document.documentElement.classList.add('ml-lock');
+        document.body.classList.add('ml-lock');
+        // Focus dialog for accessibility
+        setTimeout(() => dialog.focus(), 0);
       }
-    };
 
-    toggle.addEventListener('click', toggleMenu);
-
-    toggle.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleMenu();
+      function closeMLModal() {
+        modal.setAttribute('aria-hidden', 'true');
+        modal.classList.remove('open');
+        document.documentElement.classList.remove('ml-lock');
+        document.body.classList.remove('ml-lock');
       }
+
+      // Close on backdrop or close button
+      modal.addEventListener('click', (e) => {
+        if (e.target.dataset.close === 'ml') closeMLModal();
+      });
+
+      // Esc key closes
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+          closeMLModal();
+        }
+      });
+
+      // Show on every session entrance (page load)
+      openMLModal();
+
+      // If you want to show only once per session, use sessionStorage:
+      // if (!sessionStorage.getItem('ml-shown')) { openMLModal(); sessionStorage.setItem('ml-shown', '1'); }
+
+      // If you want to persist across visits, use localStorage similarly.
     });
-  });
-</script>
+  </script>
 </body>
 </html>
