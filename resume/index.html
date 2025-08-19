@@ -11,6 +11,13 @@
   />
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <style>
+    /* Mobile-only offset so the target isn't hidden under the navbar/URL bar */
+    @media (max-width: 600px) {
+      #example-statements {
+        /* tweak this value if your mobile navbar height differs */
+        scroll-margin-top: 120px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -88,10 +95,6 @@
         >
           Click for example resumes ↓
         </div>
-
-
-
-
 
         <h2>What makes a good application?</h2>
         <p>This advice is based on my own experience applying in the UK and US. I can’t speak for other systems — but here, one thing is universal: <strong>your personal statement needs to be personal</strong>.</p>
