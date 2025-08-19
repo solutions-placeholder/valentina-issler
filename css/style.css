@@ -601,6 +601,11 @@ html, body {
 
 /* Phones (below 600px) */
 
+.site-title {
+  margin-top: 0.35rem;
+  font-size: 1.2rem;
+  margin-left: 0.2rem;
+}
 
   .left-side,
   .right-side {
@@ -677,6 +682,7 @@ html, body {
     font-size: 1.6rem;
     color: #F8F6F1;
     cursor: pointer;
+    margin-top: -0.20rem;
   }
 
   .nav-links {
