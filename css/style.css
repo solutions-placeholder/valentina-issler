@@ -285,6 +285,12 @@ html, body {
   padding: 0rem 2rem 2rem 2rem;
   overflow-y: auto; line-height: 1.6;
 }
+/* === Justify text globally in resume === */
+.resume-content p,
+.resume-content li {
+  text-align: justify;
+  text-align-last: left;
+}
 .resume-content h1, .resume-content h2, .resume-content h3 {
   margin-top: 2rem; font-weight: 600;
 }
@@ -293,6 +299,9 @@ html, body {
 
 /* music.css – page-specific styles */
 .music-page { width: 100%; padding: 0 1rem; box-sizing: border-box; }
+/* === Justify text in music page too === */
+.music-page p { text-align: justify; text-align-last: left; }
+
 .music-icons {
   margin-top: 1.5rem; display: flex; gap: 1.5rem;
   justify-content: center; align-items: center; flex-wrap: wrap;
