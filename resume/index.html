@@ -13,47 +13,37 @@
   <style>
     /* Mobile-only offset so the target isn't hidden under the navbar/URL bar */
     @media (max-width: 600px) {
-      #example-statements {
-        /* tweak this value if your mobile navbar height differs */
-        scroll-margin-top: 90px;
-      }
+      #example-statements { scroll-margin-top: 90px; }
     }
 
-      /* Mobile-only offset so the target isn't hidden under the navbar/URL bar */
-  @media (max-width: 600px) {
-    #example-statements {
-      scroll-margin-top: 90px;
+    /* === Justify text across all content === */
+    .resume-content p,
+    .resume-content li {
+      text-align: justify;
+      text-align-last: left; /* prevents last line being stretched awkwardly */
     }
-  }
-
-  /* === Justify text across all content === */
-  .resume-content p,
-  .resume-content li {
-    text-align: justify;
-    text-align-last: left; /* prevents last line being stretched awkwardly */
-  }
   </style>
 </head>
 <body>
   <!-- Navbar -->
-<nav class="navbar">
-  <div class="nav-left">
-    <a href="/" class="site-title">V.I.</a>
-  </div>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="/" class="site-title">V.I.</a>
+    </div>
 
-  <div class="divider"></div>
+    <div class="divider"></div>
 
-  <div class="nav-center nav-links">
-    <a href="/">Home</a>
-    <a href="/resume/" class="active">Career Advice</a>
-    <a href="/music/">Music</a>
-   <!-- <a href="/books/">Books</a> -->
-  </div>
+    <div class="nav-center nav-links">
+      <a href="/">Home</a>
+      <a href="/resume/" class="active">Career Advice</a>
+      <a href="/music/">Music</a>
+      <!-- <a href="/books/">Books</a> -->
+    </div>
 
-  <div class="menu-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
-    <i class="fas fa-bars"></i>
-  </div>
-</nav>
+    <div class="menu-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
 
   <!-- Page wrapper -->
   <div class="page-wrapper">
@@ -64,10 +54,9 @@
         <ul>
           <li><strong>Why choose only one career?</strong> — Boxing people is such common practice that we forget to think outside the box.</li>
           <li><strong>Apply, apply, apply</strong> — If you don't apply to that job or that university, you have zero chances of getting in. Apply first, think about finances, responsibilities, life later. There is no point in anticipating problems that you do not yet have.</li>
-          <li><strong>Be yourself</strong> — If you pretend to be someone else in the interview, you’ll have to keep pretending every day at work. But if you're real from the start, and they hire you, you’ll know they value you — not a version you made up.</li>
+        <li><strong>Be yourself</strong> — If you pretend to be someone else in the interview, you’ll have to keep pretending every day at work. But if you're real from the start, and they hire you, you’ll know they value you — not a version you made up.</li>
           <li><strong>Rejection is redirection</strong> — If it wasn’t a match, there’s a reason. Whether you were overqualified, under-excited, or not aligned with the culture — better to walk away than be stuck somewhere you don’t belong.</li>
         </ul>
-             <!-- New Content -->
 
         <!-- Hint clickable text -->
         <div
@@ -110,16 +99,6 @@
           Click for example resumes ↓
         </div>
 
-        <h2>What makes a good application?</h2>
-        <p>This advice is based on my own experience applying in the UK and US. I can’t speak for other systems — but here, one thing is universal: <strong>your personal statement needs to be personal</strong>.</p>
-
-        <p>Here’s what’s worked for me and for the people I’ve helped, in terms of structure. You must consider:</p>
-        <ul>
-          <li><strong>Why this job/subject?</strong> Not “Chemistry inspires me because I like atoms,” but “I like atoms because my family/when I was a child/my environment…”. You must tie the subject matter to you as a person.</li>
-          <li><strong>Why this company/university?</strong> Why are you a good cultural fit? How will you maximise facilities, faculty, networking, etc. These can’t be generic answers — it’s about you specifically.</li>
-          <li><strong>Why you?</strong> What is your background and how has it shaped the way you think, work in a team, or lead? There’s a difference between saying “I’m a good team player” and “I’m a good team player because in X moment in my life I faced Y adversity which made me Z.”</li>
-        </ul>
-
         <h2 id="example-statements">Example statements</h2>
         <p>Here are a few real, anonymised personal statements — from law, business, tech, to the arts and sciences. Every company and university has a plagiarism software so please don’t copy them, it will immediately reject your application, but use them to inspire and understand just how personal, specific, and human they are.</p>
 
@@ -133,10 +112,10 @@
 
         <h2>Questions to ask yourself before writing</h2>
         <p>I created this form to help you get your ideas flowing. You’re welcome to just use it as a guide — or submit it if you’d like my input. If you opt in for help, I’ll choose who to personally support based on the answers, as I can’t help everyone (I really wish I could!).</p>
-        <button class="mainCTA" onclick="location.href='https://tally.so/embed/wdy91o?alignLeft=1&transparentBackground=1&dynamicHeight=1'">Get My Help</button>
-        <!-- End New Content -->
+        <button id="get-help-btn" class="mainCTA" onclick="location.href='https://tally.so/embed/wdy91o?alignLeft=1&transparentBackground=1&dynamicHeight=1'">Get My Help</button>
 
-      </div><br><br>
+      </div>
+      <br><br>
     </main>
   </div>
 
@@ -151,35 +130,121 @@
     </div>
   </footer>
 
-  <!-- JS for burger menu toggle -->
- <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const icon = toggle.querySelector('i');
+  <!-- Mailing list modal -->
+  <div id="ml-modal" class="ml-modal" aria-hidden="true">
+    <div class="ml-backdrop" data-close="ml"></div>
+    <div
+      class="ml-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="ml-title"
+      aria-describedby="ml-subtext"
+      tabindex="-1"
+    >
+      <button class="ml-close" aria-label="Close dialog" data-close="ml">
+        <span aria-hidden="true">&times;</span>
+      </button>
 
-    const toggleMenu = () => {
-      navLinks.classList.toggle('active');
-      toggle.classList.toggle('active');
+      <h2 id="ml-title" class="ml-title">Subscribe to receive <b>free</b> updates</h2>
+      <p id="ml-subtext" class="ml-subtext">
+        Get occasional emails on <strong>career advice</strong>, <strong>personal development</strong>, and early
+        access to <strong>new music</strong> and performances.<br><br>No spam. Unsubscribe anytime.
+      </p>
 
-      if (toggle.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-      } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      }
-    };
+      <a
+        class="ml-cta"
+        href="mailto:valentinaissler.contact@gmail.com?subject=Subscribe%20me%20to%20the%20mailing%20list"
+        rel="noopener"
+      >
+        Join Mailing List
+      </a>
 
-    toggle.addEventListener('click', toggleMenu);
+      <p class="ml-fineprint">By joining, you agree to receive occasional updates from Valentina.</p>
+    </div>
+  </div>
 
-    toggle.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleMenu();
-      }
-    });
+  <!-- JS for burger menu toggle + modal (auto-open on this page) -->
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  /* ===== Burger menu (unchanged) ===== */
+  const toggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const icon = toggle.querySelector('i');
+  const toggleMenu = () => {
+    navLinks.classList.toggle('active');
+    toggle.classList.toggle('active');
+    if (toggle.classList.contains('active')) {
+      icon.classList.remove('fa-bars'); icon.classList.add('fa-times');
+    } else {
+      icon.classList.remove('fa-times'); icon.classList.add('fa-bars');
+    }
+  };
+  toggle.addEventListener('click', toggleMenu);
+  toggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
   });
+
+  /* ===== Modal helpers ===== */
+  const modal  = document.getElementById('ml-modal');
+  const dialog = modal.querySelector('.ml-dialog');
+  const CTA    = document.querySelector('#get-help-btn'); // your page CTA
+
+  const SHOWN_KEY = 'ml-shown-resume'; // sessionStorage key
+
+  const markShown = () => sessionStorage.setItem(SHOWN_KEY, '1');
+  const hasShown  = () => sessionStorage.getItem(SHOWN_KEY) === '1';
+
+  function openMLModal() {
+    if (modal.classList.contains('open')) return;
+    modal.setAttribute('aria-hidden', 'false');
+    modal.classList.add('open');
+    document.documentElement.classList.add('ml-lock');
+    document.body.classList.add('ml-lock');
+    setTimeout(() => dialog.focus(), 0);
+  }
+  function closeMLModal() {
+    modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('open');
+    document.documentElement.classList.remove('ml-lock');
+    document.body.classList.remove('ml-lock');
+  }
+
+  // Close on backdrop or close button
+  modal.addEventListener('click', (e) => {
+    if (e.target.dataset.close === 'ml') {
+      markShown();
+      closeMLModal();
+    }
+  });
+
+  // Close button explicitly (has data-close="ml" already)
+  const closeBtn = modal.querySelector('.ml-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => { markShown(); closeMLModal(); });
+  }
+
+  // Esc key closes
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      markShown();
+      closeMLModal();
+    }
+  });
+
+  // Mark as shown when user clicks your page CTA (they’re engaging)
+  if (CTA) {
+    CTA.addEventListener('click', () => {
+      markShown();
+      if (modal.classList.contains('open')) closeMLModal();
+    });
+  }
+
+  /* ===== Auto-open ONCE per session on the career page ===== */
+  if (!hasShown()) {
+    // tiny delay so it feels gentler
+    setTimeout(openMLModal, 200);
+  }
+});
 </script>
 </body>
 </html>

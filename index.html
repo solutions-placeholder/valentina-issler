@@ -65,7 +65,7 @@
     </div>
   </footer>
 
-  <!-- Mailing list modal -->
+  <!-- Mailing list modal (kept, but never opened on Home) -->
   <div id="ml-modal" class="ml-modal" aria-hidden="true">
     <div class="ml-backdrop" data-close="ml"></div>
     <div
@@ -98,7 +98,7 @@
     </div>
   </div>
 
-  <!-- JS for burger menu toggle + modal -->
+  <!-- JS for burger menu only (NO modal auto-open on Home) -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // ======= Burger menu =======
@@ -126,46 +126,7 @@
         }
       });
 
-      // ======= Mailing list modal =======
-      const modal = document.getElementById('ml-modal');
-      const dialog = modal.querySelector('.ml-dialog');
-
-      function openMLModal() {
-        modal.setAttribute('aria-hidden', 'false');
-        modal.classList.add('open');
-        // Optional: prevent background scroll while modal open
-        document.documentElement.classList.add('ml-lock');
-        document.body.classList.add('ml-lock');
-        // Focus dialog for accessibility
-        setTimeout(() => dialog.focus(), 0);
-      }
-
-      function closeMLModal() {
-        modal.setAttribute('aria-hidden', 'true');
-        modal.classList.remove('open');
-        document.documentElement.classList.remove('ml-lock');
-        document.body.classList.remove('ml-lock');
-      }
-
-      // Close on backdrop or close button
-      modal.addEventListener('click', (e) => {
-        if (e.target.dataset.close === 'ml') closeMLModal();
-      });
-
-      // Esc key closes
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('open')) {
-          closeMLModal();
-        }
-      });
-
-      // Show on every session entrance (page load)
-      openMLModal();
-
-      // If you want to show only once per session, use sessionStorage:
-      // if (!sessionStorage.getItem('ml-shown')) { openMLModal(); sessionStorage.setItem('ml-shown', '1'); }
-
-      // If you want to persist across visits, use localStorage similarly.
+      // NOTE: Intentionally no openMLModal() call on the homepage.
     });
   </script>
 </body>

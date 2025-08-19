@@ -423,12 +423,13 @@ html, body {
   .menu-toggle { font-size: 1.72rem; margin-top: -0.2rem; }
 }
 
-/* ===== Mailing List Modal ===== */
+/* ===== Mailing List Modal (base) ===== */
 .ml-modal {
   position: fixed;
   inset: 0;
-  display: none;              /* hidden by default */
-  z-index: 2000;              /* above navbar */
+  /* original file used display none/block; we override below to enable transitions */
+  display: none;
+  z-index: 2000;
 }
 .ml-modal.open { display: block; }
 
@@ -443,7 +444,7 @@ html, body {
   position: relative;
   max-width: 560px;
   width: calc(100% - 2rem);
-  margin: 16vh auto 0;   /* ⬅️ was 8vh, now 16vh */
+  margin: 16vh auto 0;
   background: #F8F6F1;
   color: #3E4B42;
   border-radius: 14px;
@@ -514,7 +515,7 @@ html, body {
 /* Mobile-first adjustments */
 @media (max-width: 600px) {
   .ml-dialog {
-    margin: 20vh auto 0;   /* ⬅️ was 10vh, now lower on phones */
+    margin: 20vh auto 0;   /* lower on phones */
     width: calc(100% - 1.5rem);
     padding: 1rem 1rem .95rem;
     border-radius: 12px;
@@ -531,4 +532,37 @@ html, body {
   }
   .ml-title { font-size: 1.6rem; }
   .ml-subtext { font-size: 1.05rem; }
+}
+
+/* ===== Modal transition overrides (enable smooth fade/slide) ===== */
+/* Put this AFTER the base modal styles above */
+.ml-modal {
+  /* override display toggle with anim-friendly visibility/opacity */
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .28s ease, visibility 0s linear .28s;
+}
+.ml-modal.open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity .28s ease;
+}
+
+.ml-dialog {
+  transform: translateY(-6px);
+  opacity: 0;
+  transition: transform .32s ease, opacity .32s ease;
+  will-change: transform, opacity;
+}
+.ml-modal.open .ml-dialog {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .ml-modal, .ml-dialog { transition: none !important; }
 }
