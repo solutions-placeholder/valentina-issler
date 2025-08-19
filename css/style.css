@@ -12,9 +12,7 @@ html, body {
   flex-direction: column;
 }
 
-* {
-  box-sizing: border-box; 
-}
+* { box-sizing: border-box; }
 
 @media (min-width: 1801px) {
   .right-side img {
@@ -34,10 +32,8 @@ html, body {
 /* ===== Navbar ===== */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 64px;
+  top: 0; left: 0;
+  width: 100%; height: 64px;
   background-color: #3E4B42;
   z-index: 1000;
   padding: 0 1.5rem;
@@ -51,8 +47,7 @@ html, body {
   font-size: 0.95rem;
 }
 
-.nav-left,
-.menu-toggle {
+.nav-left, .menu-toggle {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
@@ -91,8 +86,7 @@ html, body {
   font-weight: 400;
 }
 
-.navbar a.active,
-.navbar a:hover {
+.navbar a.active, .navbar a:hover {
   border-bottom: 2px solid #F8F6F1;
 }
 
@@ -115,10 +109,7 @@ html, body {
 /* ===== Content ===== */
 .content {
   position: fixed;
-  top: 50px;
-  bottom: 48px;
-  left: 0;
-  right: 0;
+  top: 50px; bottom: 48px; left: 0; right: 0;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -130,8 +121,6 @@ html, body {
 }
 
 .example-hint {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   margin: 1.5em 0 0.5em;
   font-size: 0.95rem;
   cursor: pointer;
@@ -142,26 +131,16 @@ html, body {
   display: block;
   width: 100%;
 }
-
 .example-hint,
 .example-hint:link,
-.example-hint:visited {
-  color: #b29b7b;
-  text-decoration: none;
-}
-
+.example-hint:visited { color: #b29b7b; text-decoration: none; }
 .example-hint:hover,
-.example-hint:focus {
-  color: #D9CFC1;
-  text-decoration: underline;
-}
+.example-hint:focus { color: #D9CFC1; text-decoration: underline; }
 
 .left-side {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: flex-start;
   padding-left: 2rem;
   text-align: left;
   min-width: 320px;
@@ -169,8 +148,7 @@ html, body {
 }
 
 .hero-heading {
-  font-size: 5rem;
-  font-weight: 200;
+  font-size: 5rem; font-weight: 200;
   line-height: 1.05;
   margin-bottom: 2rem;
   letter-spacing: -0.03em;
@@ -185,8 +163,7 @@ html, body {
 }
 
 .philosophy-block {
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1rem; line-height: 1.5rem;
   max-width: 600px;
   margin-bottom: rem;
   color: #3A453D;
@@ -202,7 +179,7 @@ html, body {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.25s ease;
-  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1.5px 4px rgba(0,0,0,0.1);
   margin-top: 1rem;
   align-self: flex-start;
   font-weight: 500;
@@ -210,524 +187,229 @@ html, body {
 }
 
 .mainCTAv2 {
-  background-color: #3E4B42;
-  color: #F8F6F1;
+  background-color: #3E4B42; color: #F8F6F1;
   border: none;
   padding: 10px 26px;
-  font-size: 1rem;
-  font-family: 'Inter', sans-serif;
-  border-radius: 4px;
-  cursor: pointer;
+  font-size: 1rem; font-family: 'Inter', sans-serif;
+  border-radius: 4px; cursor: pointer;
   transition: background-color 0.25s ease;
-  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1.5px 4px rgba(0,0,0,0.1);
   margin-top: 1rem;
   align-self: flex-start;
   font-weight: 500;
   width: 20%;
 }
-
 .mainCTA:hover {
   background-color: #2f3932;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 
 .right-side {
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; align-items: center;
   padding-top: 0;
   min-width: 320px;
 }
-
 .right-side img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
   border-radius: 8px;
   box-shadow: 0 6px 10px rgba(0,0,0,0.07);
   margin-top: 11px;
 }
 
 /* === PDFs === */
-
-/* PDF Buttons Container */
 .pdf-row {
-  display: flex;
-  gap: 10px;
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-  flex-wrap: wrap; /* allow buttons to wrap on small screens */
+  display: flex; gap: 10px;
+  margin: 2.5rem 0;
+  flex-wrap: wrap;
   justify-content: flex-start;
 }
-
-/* PDF Buttons Base Style */
 .pdf-button {
   padding: 10px 20px;
-  background-color: #3E4B42; /* dark green */
-  color: white;
-  text-decoration: none;
+  background-color: #3E4B42;
+  color: white; text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.2s;
-  font-weight: 600;
-  font-size: 1rem;
-  white-space: nowrap;
-  display: inline-block;
-  min-width: 100px;
-  text-align: center;
-  box-sizing: border-box;
-  user-select: none;
+  font-weight: 600; font-size: 1rem;
+  white-space: nowrap; display: inline-block;
+  min-width: 100px; text-align: center;
+  box-sizing: border-box; user-select: none;
 }
-
-/* Hover state */
-.pdf-button:hover,
-.pdf-button:focus {
-  background-color: #5A6B60; /* lighter green on hover */
+.pdf-button:hover, .pdf-button:focus {
+  background-color: #5A6B60;
   outline: none;
 }
 
 /* Responsive adjustments */
-
-/* Tablets and below: stack buttons if needed */
 @media (max-width: 900px) {
   .pdf-button {
-    flex: 1 1 45%; /* buttons take about half container width */
-    min-width: auto;
+    flex: 1 1 45%; min-width: auto;
     white-space: normal;
-    font-size: 0.95rem;
-    padding: 12px 15px;
+    font-size: 0.95rem; padding: 12px 15px;
   }
-
-  .pdf-row {
-    justify-content: center; /* center buttons on smaller screens */
-  }
+  .pdf-row { justify-content: center; }
 }
-
-
-
-
-/* Phones: full width buttons for easy tap */
 @media (max-width: 600px) {
   .pdf-button {
-    flex: 1 1 100%;
-    min-width: auto;
-    font-size: 0.9rem;
-    padding: 14px 20px;
+    flex: 1 1 100%; min-width: auto;
+    font-size: 0.9rem; padding: 14px 20px;
     white-space: normal;
   }
-
-  .pdf-row {
-    justify-content: center;
-  }
+  .pdf-row { justify-content: center; }
 }
 
 /* ===== Footer ===== */
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 48px;
+  position: fixed; bottom: 0; left: 0;
+  width: 100%; height: 48px;
   background-color: #3E4B42;
   padding: 0 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; justify-content: center; align-items: center;
   z-index: 10;
   font-weight: 400;
 }
-
 .social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-  flex-wrap: wrap;
+  display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap;
 }
-
 .social-icons a {
-  font-size: 1.4rem;
-  color: #F8F6F1;
-  text-decoration: none;
-  transition: color 0.25s ease;
+  font-size: 1.4rem; color: #F8F6F1;
+  text-decoration: none; transition: color 0.25s ease;
 }
-
-.social-icons a:hover {
-  color: #BDB8B1;
-}
+.social-icons a:hover { color: #BDB8B1; }
 
 /* Resume-specific layout */
 .resume-content {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
-  overflow-y: auto;
-  line-height: 1.6;
-  padding: 0rem 2rem 2rem 2rem; /* less top padding, keep others */
+  max-width: 100%; margin: 0 auto;
+  padding: 0rem 2rem 2rem 2rem;
+  overflow-y: auto; line-height: 1.6;
 }
-
-.resume-content h1,
-.resume-content h2,
-.resume-content h3 {
-  margin-top: 2rem;
-  font-weight: 600;
+.resume-content h1, .resume-content h2, .resume-content h3 {
+  margin-top: 2rem; font-weight: 600;
 }
-
-.resume-content ul {
-  padding-left: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.resume-content ul li {
-  margin-bottom: 1em; /* increase space between bullets */
-  line-height: 1.6;   /* improve readability */
-}
+.resume-content ul { padding-left: 1.2rem; margin-bottom: 1.5rem; }
+.resume-content ul li { margin-bottom: 1em; line-height: 1.6; }
 
 /* music.css – page-specific styles */
-.music-page {
-  width: 100%;
-  padding: 0 1rem;
-  box-sizing: border-box;
-}
-
+.music-page { width: 100%; padding: 0 1rem; box-sizing: border-box; }
 .music-icons {
-  margin-top: 1.5rem;
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center; /* Center icons horizontally */
-  align-items: center;
-  flex-wrap: wrap;
+  margin-top: 1.5rem; display: flex; gap: 1.5rem;
+  justify-content: center; align-items: center; flex-wrap: wrap;
 }
-
 .music-icons a {
-  font-size: 1.8rem;
-  color: #3E4B42;
+  font-size: 1.8rem; color: #3E4B42;
   transition: color 0.3s ease, transform 0.25s ease;
-  display: inline-flex;
-  align-items: center;
-  line-height: 1;
-  text-decoration: none;
+  display: inline-flex; align-items: center;
+  line-height: 1; text-decoration: none;
 }
-
-.music-icons a:hover,
-.music-icons a:focus {
-  color: #6C7A68;
-  transform: scale(1.2);
-  outline: none;
+.music-icons a:hover, .music-icons a:focus {
+  color: #6C7A68; transform: scale(1.2); outline: none;
 }
-
-
-.see-me-perform {
-  width: 100%;
-  text-align: center;
-  margin: 2rem 0 4rem 0; /* spacing above footer */
-}
-
+.see-me-perform { width: 100%; text-align: center; margin: 2rem 0 4rem; }
 .perform-button {
-  background-color: #3E4B42;
-  color: #F8F6F1;
+  background-color: #3E4B42; color: #F8F6F1;
   padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  text-decoration: none;
-  border-radius: 8px;
+  font-size: 1rem; font-weight: 500;
+  text-decoration: none; border-radius: 8px;
   display: inline-block;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-
-.perform-button:hover {
-  background-color: #2f3932;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-.music-page-body html,
-.music-page-body body {
-  overflow-y: auto !important;
-}
-
-.music-page-body .page-wrapper {
-  overflow: visible !important;
-}
-
-.music-page-body .content {
-  position: relative !important;
-  top: 64px; /* height of navbar */
-  bottom: 48px; /* height of footer */
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 5rem;
-  padding: 1.8rem 1rem;
-  text-align: left;
-  overflow-y: auto !important;
-  max-height: calc(100vh - 64px - 48px);
-}
-
-/* Deezer wrapper ensures no strange line or fallback text */
-.music-icons .deezer-wrapper {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 0;
-}
-
-.music-icons .deezer-icon {
-  height: 1.8rem;
-  width: auto;
-  display: block;
-  vertical-align: middle;
-  filter: invert(28%) sepia(7%) saturate(665%) hue-rotate(86deg) brightness(92%) contrast(86%);
-  pointer-events: none;
-}
+.perform-button:hover { background-color: #2f3932; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
 
 /* ===== Responsive Breakpoints ===== */
-
-/* Large Ultra-Wide Screens (above 1800px) */
 @media (min-width: 1801px) {
-  .content {
-    max-width: 2400px;
-    gap: 8rem;
-    padding: 2rem 1.5rem;
-  }
-
-  .hero-heading {
-    font-size: 6rem;
-  }
-
-  .intro,
-  .philosophy-block {
-    font-size: 1.25rem;
-  }
-
-  .mainCTA {
-    font-size: 1.1rem;
-    padding: 12px 32px;
-    width: 100%;
-  }
+  .content { max-width: 2400px; gap: 8rem; padding: 2rem 1.5rem; }
+  .hero-heading { font-size: 6rem; }
+  .intro, .philosophy-block { font-size: 1.25rem; }
+  .mainCTA { font-size: 1.1rem; padding: 12px 32px; width: 100%; }
 }
-
-
-/* Desktops / Large Tablets (900px to 1800px) */
 @media (max-width: 1800px) and (min-width: 901px) {
-  .content {
-    max-width: 1200px;
-    gap: 3.5rem;
-    padding: 1rem 1rem;
-  }
-
-  .hero-heading {
-    font-size: 3.1rem;
-  }
-
-  .intro,
-  .philosophy-block {
-    font-size: 1rem;
-    max-width: 480px;
-  }
-
-  .mainCTA {
-    font-size: 0.9rem;
-    padding: 8px 20px;
-  }
+  .content { max-width: 1200px; gap: 3.5rem; padding: 1rem; }
+  .hero-heading { font-size: 3.1rem; }
+  .intro, .philosophy-block { font-size: 1rem; max-width: 480px; }
+  .mainCTA { font-size: 0.9rem; padding: 8px 20px; }
 }
-
-/* Tablets (600px to 900px) */
 @media (max-width: 900px) and (min-width: 601px) {
-  .content {
-    position: static;
-    flex-direction: column;
-    max-width: 90%;
-    margin: 2rem auto 5rem auto;
-    padding: 0 1rem;
-    gap: 2.5rem;
-    margin-top: 80px; /* Added margin top to clear fixed navbar */
-  }
-
-  .left-side,
-  .right-side {
-    width: 100%;
-    padding: 0;
-    text-align: center;
-  }
-
-  .site-title {
-  margin-top: 0.35rem;
-  font-size: 1.2rem;
-  margin-left: 0.2rem;
+  .content { position: static; flex-direction: column;
+    max-width: 90%; margin: 2rem auto 5rem; padding: 0 1rem;
+    gap: 2.5rem; margin-top: 80px; }
+  .left-side, .right-side { width: 100%; padding: 0; text-align: center; }
+  .site-title { margin-top: 0.35rem; font-size: 1.2rem; margin-left: 0.2rem; }
+  .hero-heading { font-size: 3rem; }
+  .intro, .philosophy-block { font-size: 1rem; max-width: 100%; }
+  .mainCTA { align-self: center; font-size: 1rem; padding: 12px 28px; }
+  .right-side img { height: auto; max-width: 100%; border-radius: 6px; }
 }
-
-  .hero-heading {
-    font-size: 3rem;
-  }
-
-  .intro,
-  .philosophy-block {
-    font-size: 1rem;
-    max-width: 100%;
-  }
-
-  .mainCTA {
-    align-self: center;
-    font-size: 1rem;
-    padding: 12px 28px;
-  }
-
-  .right-side img {
-    height: auto;
-    max-width: 100%;
-    border-radius: 6px;
-  }
-}
-
-/* Phones (below 600px) */
 @media (max-width: 600px) {
-  html, body {
-    font-size: 14px;
-    overflow-y: auto;
-  }
-
-  .page-wrapper {
-    overflow: visible;
-  }
-
+  html, body { font-size: 14px; overflow-y: auto; }
+  .page-wrapper { overflow: visible; }
   .content {
-    position: static !important;
-    overflow: visible !important;
-    flex-direction: column;
-    max-width: 100%;
-    margin: 80px auto 5rem auto; /* top margin clears fixed navbar */
-    padding: 0rem 1rem 0;
+    position: static !important; overflow: visible !important;
+    flex-direction: column; max-width: 100%;
+    margin: 80px auto 5rem auto; padding: 0 1rem 0;
     gap: 0.5rem;
   }
-
-
-/* Phones (below 600px) */
-
-.site-title {
-  margin-top: 0.35rem;
-  font-size: 1.2rem;
-  margin-left: 0.2rem;
-}
-
-  .left-side,
-  .right-side {
-    width: 100%;
-    padding: 0;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  .left-side {
-    align-items: center;
-  }
-
+  .site-title { margin-top: 0.35rem; font-size: 1.2rem; margin-left: 0.2rem; }
+  .left-side, .right-side { width: 100%; padding: 0; text-align: center; margin-bottom: 2rem; }
+  .left-side { align-items: center; }
   .right-side img {
-    width: 100%;
-    height: 350px; /* controls visible portion */
-    object-fit: cover;
-    object-position: top center; /* keeps top, crops bottom */
-    border-radius: 4px;
+    width: 100%; height: 350px; object-fit: cover;
+    object-position: top center; border-radius: 4px;
     transition: transform 0.3s ease;
   }
-
-  .hero-heading {
-    font-size: 2.2rem;
-    margin: 2.4rem 0 0rem;
-    text-align: center;
-    width: 100%;
-    padding: 0 1rem;
-    box-sizing: border-box;
-  }
-
-  .intro,
-  .philosophy-block {
-    font-size: 0.95rem;
-    max-width: 100%;
-  }
-
-  .mainCTA {
-    align-self: center;
-    font-size: 0.95rem;
-    padding: 10px 24px;
-    width: 100%;
-  }
-
-  .music-page-body {
-    margin-top: 20rem;
-  }
-
-  .social-icons {
-    gap: 0.8rem;
-  }
-
-  .social-icons a {
-    font-size: 1.2rem;
-  }
-  
+  .hero-heading { font-size: 2.2rem; margin: 2.4rem 0 0; text-align: center; width: 100%; padding: 0 1rem; box-sizing: border-box; }
+  .intro, .philosophy-block { font-size: 0.95rem; max-width: 100%; }
+  .mainCTA { align-self: center; font-size: 0.95rem; padding: 10px 24px; width: 100%; }
+  .music-page-body { margin-top: 20rem; }
+  .social-icons { gap: 0.8rem; }
+  .social-icons a { font-size: 1.2rem; }
   /* Mobile Navbar Adjustments */
-  .navbar {
-    justify-content: space-between;
-    padding: 0 1rem;
-  }
-
-  .nav-left {
-    order: 1;
-  }
-
-  .nav-center {
-    display: none;
-  }
-
+  .navbar { justify-content: space-between; padding: 0 1rem; }
+  .nav-left { order: 1; }
+  .nav-center { display: none; }
   .menu-toggle {
-    order: 2;
-    display: flex;
-    font-size: 1.6rem;
-    color: #F8F6F1;
-    cursor: pointer;
-    margin-top: -0.20rem;
+    order: 2; display: flex;
+    font-size: 1.6rem; color: #F8F6F1;
+    cursor: pointer; margin-top: -0.2rem;
   }
-
   .nav-links {
-    display: flex;
-    flex-direction: column;
+    display: flex; flex-direction: column;
     background-color: #3E4B42;
-    width: 100%;
-    position: absolute;
-    top: 64px;
-    left: 0;
-    padding: 0.5rem 1.5rem;
-    border-bottom: 1px solid #5a665a;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
+    width: 100%; position: absolute; top: 64px; left: 0;
+    padding: 0.5rem 1.5rem; border-bottom: 1px solid #5a665a;
+    max-height: 0; opacity: 0; overflow: hidden;
     pointer-events: none;
     transition: max-height 0.4s ease, opacity 0.8s ease;
   }
+  .nav-links.active { max-height: 500px; opacity: 1; pointer-events: auto; }
+  .nav-links a { padding: 0.5rem 0; border-bottom: none; text-align: center; font-size: 1rem; }
+  .divider { display: none; }
+  .music-page { margin-top: 30px; padding: 0 1rem; }
+}
 
-  .nav-links.active {
-    max-height: 500px; /* adjust if needed */
-    opacity: 1;
-    pointer-events: auto;
+/* ===== Large Phones / iPhone Pro Max ===== */
+@media screen and (min-width: 415px) and (max-width: 460px) {
+  .navbar { height: 64px; align-items: center; }
+  .nav-left, .menu-toggle { height: 64px; display: flex; align-items: center; }
+  .site-title {
+    font-size: 1.25rem;
+    margin-top: 0.3rem; margin-left: 0.25rem;
+    line-height: 1; display: inline-flex; align-items: center;
   }
+  .menu-toggle {
+    font-size: 1.7rem;
+    margin-top: -0.2rem;
+  }
+  .menu-toggle i { display: inline-flex; align-items: center; line-height: 1; vertical-align: middle; }
+}
 
-  .nav-links a {
-    padding: 0.5rem 0;
-    border-bottom: none;
-    text-align: center;
-    font-size: 1rem;
-  }
-
-  .divider {
-    display: none;
-  }
-
-  /* Padding for music page */
-  .music-page {
-    margin-top: 30px;
-    padding: 0 1rem;
-  }
+/* Exact iPhone 16 Pro Max */
+@media screen
+  and (device-width: 430px)
+  and (device-height: 932px)
+  and (-webkit-device-pixel-ratio: 3) {
+  .site-title { font-size: 1.26rem; margin-top: 0.3rem; }
+  .menu-toggle { font-size: 1.72rem; margin-top: -0.2rem; }
 }

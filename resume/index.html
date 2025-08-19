@@ -18,6 +18,20 @@
         scroll-margin-top: 90px;
       }
     }
+
+      /* Mobile-only offset so the target isn't hidden under the navbar/URL bar */
+  @media (max-width: 600px) {
+    #example-statements {
+      scroll-margin-top: 90px;
+    }
+  }
+
+  /* === Justify text across all content === */
+  .resume-content p,
+  .resume-content li {
+    text-align: justify;
+    text-align-last: left; /* prevents last line being stretched awkwardly */
+  }
   </style>
 </head>
 <body>
